@@ -34,3 +34,5 @@ compiling source file
 
     3. updating src/rtklib.h
         3.1. testing postpos() function with .so file
+
+    4. have a try
