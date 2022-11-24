@@ -1,0 +1,36 @@
+create shared object(.so) file for RTKLIB
+multi-platform, java/c/c++ mixed
+
+    1. make file
+    2. java jni header file
+    3. source file
+    4. gcc/g++ compiler
+
+compiling source file
+    1. rtklib_so
+        1.1. src directory in RTKLIB
+	1.2. source file in rtklib_src_test
+	    1.2.1. make, generate .so.0.0.0 file
+	    1.2.2. make link_library_soname, generate .so.0 links to .so.0.0.0
+	    1.2.3. make link_library, generate .so links to .so.0.0.0
+	    1.2.4. pwd, add /path/to/so/lib to LD_LIBRARY_PATH to ~/.bashrc and source ~/.bashrc
+	1.3. test .so file
+	    1.3.1. compiling main_implement.c file, postpos() in RTKLIB
+	    1.3.2. make, generate executive file test_implementation
+	    1.3.3. ./test_implementation
+
+    2. rtklib_so_java
+        2.1. src directory in RTKLIB
+	2.2. java api in directory rtk2, directory jni contains jni.h, jni_md.h and etc
+	2.3. .so file, directory rtklib_src_test
+	    2.3.1. make, generate .so.0.0.0 file
+	    2.3.2. make link_library_soname, generate .so.0 links to .so.0.0.0
+	    2.3.3. make link_library, generate .so links to .so.0.0.0
+	    2.3.4. pwd, add /path/to/so/lib to LD_LIBRARY_PATH to ~/.bashrc and source ~/.bashrc
+	2.4. test .so file
+	    2.4.1. compiling main_implement.c file, postpos() in RTKLIB
+	    2.4.2. make, generate executive file test_implementation
+	    2.4.3. ./test_implementation
+
+    3. updating src/rtklib.h
+        3.1. testing postpos() function with .so file
